@@ -1,10 +1,12 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Welcome extends Controller {
+class Controller_Welcome extends Controller_Template {
 
-	public function action_index()
+    public $template = 'loginView';
+
+	public function action_action()
 	{
-		$this->response->body('hello, world!');
+		$this->template->content = View::factory('loginView');
 	}
 
-} // End Welcome
+} // End Ajax
